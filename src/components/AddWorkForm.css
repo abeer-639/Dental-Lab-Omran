@@ -1,0 +1,67 @@
+.add-work-form {
+  background: var(--bg-section);
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.add-form-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.add-form-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-dark);
+  background: var(--bg-card);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+}
+
+/* form-input مُعرَّف في ClientsPage.css لكن نعيده هنا */
+.add-work-form .form-input {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-dark);
+  background: var(--bg-card);
+  outline: none;
+  transition: border-color var(--transition);
+  flex: 1;
+  min-width: 120px;
+}
+
+.add-work-form .form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(58, 175, 207, 0.12);
+}
+
+.cost-input {
+  max-width: 130px;
+}
+
+.add-form-actions {
+  display: flex;
+  gap: 8px;
+}

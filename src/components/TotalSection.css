@@ -1,0 +1,104 @@
+.total-section {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.total-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-mid);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== تفصيل الأنواع ===== */
+.total-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  background: var(--bg-section);
+}
+
+.total-row-label {
+  font-weight: 700;
+  font-size: 13px;
+  min-width: 50px;
+}
+
+.total-row-count {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.total-row-amount {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-dark);
+  direction: ltr;
+}
+
+/* ===== الإجمالي الكلي ===== */
+.total-grand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--primary);
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.total-grand-amount {
+  font-size: 17px;
+  direction: ltr;
+}
+
+/* ===== فئة محددة ===== */
+.total-single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.total-single-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.total-single-amount {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  direction: ltr;
+}
+
+.total-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  padding: 6px;
+  background: var(--bg-section);
+  border-radius: var(--radius-sm);
+}

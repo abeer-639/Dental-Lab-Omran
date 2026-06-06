@@ -1,0 +1,62 @@
+/* ===== متغيرات الألوان مستوحاة من شعار المخبر ===== */
+:root {
+  --primary:        #3aafcf;   /* الأزرق الرئيسي من الشعار */
+  --primary-dark:   #1a8aab;   /* أزرق داكن للـ hover */
+  --primary-light:  #e8f6fb;   /* أزرق فاتح للخلفيات */
+  --accent:         #2d8db0;   /* لون تمييزي */
+  --bg-page:        #f0f6f9;   /* خلفية الصفحة الرئيسية */
+  --bg-card:        #ffffff;   /* خلفية البطاقات */
+  --bg-section:     #f8fbfd;   /* خلفية الأقسام */
+  --text-dark:      #1e2d3d;   /* نص داكن */
+  --text-mid:       #4a6275;   /* نص متوسط */
+  --text-light:     #7a96a8;   /* نص فاتح */
+  --border:         #d4e8f0;   /* لون الحدود */
+  --border-strong:  #a8ccdc;   /* حدود أقوى */
+  --shadow-sm:      0 2px 8px rgba(58, 175, 207, 0.08);
+  --shadow-md:      0 4px 20px rgba(58, 175, 207, 0.15);
+  --shadow-lg:      0 8px 40px rgba(58, 175, 207, 0.20);
+  --radius-sm:      8px;
+  --radius-md:      12px;
+  --radius-lg:      18px;
+  --radius-xl:      24px;
+  --font:           'Tajawal', sans-serif;
+  --transition:     0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== إعادة ضبط عامة ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text-dark);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== خلفية الصفحة (نقاط دقيقة) ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}

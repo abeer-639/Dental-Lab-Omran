@@ -1,0 +1,76 @@
+import { useState } from 'react'
+import { WORK_TYPES, generateId } from '../utils/helpers'
+import Button from './Button'
+import './AddWorkForm.css'
+
+function AddWorkForm({ onAdd, onCancel }) {
+  const [form, setForm] = useState({
+    type: 'vacuum',
+    desc: '',
+    cost: '',
+  })
+
+  const handleSubmit = () => {
+    if (!form.desc.trim() || !form.cost) return
+    onAdd({
+      id:   generateId(),
+      type: form.type,
+      desc: form.desc.trim(),
+      cost: Number(form.cost),
+    })
+    // إعادة ضبط النموذج
+    setForm({ type: 'vacuum', desc: '', cost: '' })
+  }
+
+  return (
+    <div className="add-work-form">
+      <h4 className="add-form-title">إضافة عمل جديد</h4>
+      <div className="add-form-fields">
+
+        {/* نوع العمل */}
+        <select
+          className="form-select"
+          value={form.type}
+          onChange={(e) => setForm(f => ({ ...f, type: e.target.value }))}
+        >
+          {WORK_TYPES.map(t => (
+            <option key={t.value} value={t.value}>{t.label}</option>
+          ))}
+        </select>
+
+        {/* الوصف */}
+        <input
+          className="form-input"
+          type="text"
+          placeholder="وصف العمل"
+          value={form.desc}
+          onChange={(e) => setForm(f => ({ ...f, desc: e.target.value }))}
+          onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+        />
+
+        {/* التكلفة */}
+        <input
+          className="form-input cost-input"
+          type="number"
+          placeholder="التكلفة"
+          value={form.cost}
+          onChange={(e) => setForm(f => ({ ...f, cost: e.target.value }))}
+          min="0"
+          onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+        />
+      </div>
+
+      <div className="add-form-actions">
+        <Button
+          onClick={handleSubmit}
+          disabled={!form.desc.trim() || !form.cost}
+        >
+          + إضافة
+        </Button>
+        <Button variant="ghost" onClick={onCancel}>إلغاء</Button>
+      </div>
+    </div>
+  )
+}
+
+export default AddWorkForm

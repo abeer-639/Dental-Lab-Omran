@@ -1,0 +1,158 @@
+.works-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.client-phone-badge {
+  font-size: 13px;
+  color: var(--text-light);
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 12px;
+  direction: ltr;
+  display: inline-block;
+}
+
+/* ===== قائمة الأعمال ===== */
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===== حالة فارغة ===== */
+.works-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-light);
+  background: var(--bg-section);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+}
+/* ===== ترويسة الطباعة ===== */
+.print-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.print-header-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  padding: 2px;
+  box-shadow: 0 0 0 3px var(--primary-light);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.print-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.print-header-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  border-left: 1px solid var(--border);
+  padding-left: 16px;
+}
+
+.print-lab-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.3px;
+}
+
+.print-lab-sub {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.print-header-client {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.print-client-label {
+  font-size: 11px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.print-client-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.print-client-phone {
+  font-size: 13px;
+  color: var(--text-light);
+  direction: ltr;
+}
+
+.print-btn {
+  background: var(--primary-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 9px 18px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.print-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* ===== أنماط الطباعة  ===== */
+@media print {
+  .navbar,
+  .print-btn,
+  .add-work-form,
+  .filter-bar,
+  .work-delete {
+    display: none !important;
+  }
+
+  .print-header {
+    border: 2px solid #3aafcf;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+
+  .works-page {
+    padding: 0;
+  }
+
+  body {
+    background: #fff !important;
+  }
+}

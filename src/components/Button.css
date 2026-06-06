@@ -1,0 +1,64 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Primary ===== */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(58, 175, 207, 0.4);
+}
+
+/* ===== Secondary ===== */
+.btn-secondary {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: var(--border);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--border);
+}
+
+/* ===== Ghost ===== */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-mid);
+  border-color: var(--border);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--bg-section);
+  color: var(--text-dark);
+}
+
+/* ===== Danger ===== */
+.btn-danger {
+  background: #fff0f0;
+  color: #c0392b;
+  border-color: #f5b7b1;
+}
+.btn-danger:hover:not(:disabled) {
+  background: #fde8e8;
+}
