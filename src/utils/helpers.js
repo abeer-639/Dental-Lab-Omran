@@ -3,7 +3,7 @@ export const WORK_TYPES = [
   { value: 'vacuum',      label: 'فاكيوم'  },
   { value: 'flexible',   label: 'مرن'     },
   { value: 'industrial', label: 'صناعة'   },
-  { value: 'flex',       label: 'فليكس'   },
+  { value: 'flex',       label: 'مؤقت'   },
 ]
 
 // أنماط الألوان لكل نوع (مستخرجة من لون الشعار الأزرق)
