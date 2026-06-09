@@ -50,3 +50,7 @@
   border-color: #f5b7b1;
   color: #c0392b;
 }
+.work-done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

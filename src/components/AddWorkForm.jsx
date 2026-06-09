@@ -8,6 +8,8 @@ function AddWorkForm({ onAdd, onCancel }) {
     type: 'vacuum',
     desc: '',
     cost: '',
+    delivered: false, 
+    paid: false, 
   })
 
   const handleSubmit = () => {
@@ -17,9 +19,11 @@ function AddWorkForm({ onAdd, onCancel }) {
       type: form.type,
       desc: form.desc.trim(),
       cost: Number(form.cost),
+      delivered: form.delivered,
+      paid: form.paid,
     })
     // إعادة ضبط النموذج
-    setForm({ type: 'vacuum', desc: '', cost: '' })
+    setForm({ type: 'vacuum', desc: '', cost: '', delivered: false, paid: false })
   }
 
   return (
@@ -59,7 +63,16 @@ function AddWorkForm({ onAdd, onCancel }) {
           onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
         />
       </div>
-
+      <div className="checkbox-group">
+  <label>
+      <input type="checkbox" checked={form.delivered} onChange={e => setForm(f => ({ ...f, delivered: e.target.checked }))} />
+       تم التسليم
+  </label>
+  <label>
+    <input type="checkbox" checked={form.paid} onChange={e => setForm(f => ({ ...f, paid: e.target.checked }))} />
+    تم الدفع
+  </label>
+</div>
       <div className="add-form-actions">
         <Button
           onClick={handleSubmit}

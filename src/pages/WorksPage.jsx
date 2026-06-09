@@ -12,9 +12,14 @@ function WorksPage({ client, clients, setClients }) {
   const [showForm, setShowForm]   = useState(false)
 
   // الأعمال المعروضة حسب الفلتر
-  const displayedWorks = filter === 'all'
-    ? client.works
-    : client.works.filter(w => w.type === filter)
+const displayedWorks = client.works.filter(w => {
+  if (filter === 'all') return true
+  if (filter === 'paid') return w.paid
+  if (filter === 'unpaid') return !w.paid
+  if (filter === 'delivered') return w.delivered
+  if (filter === 'undelivered') return !w.delivered
+  return w.type === filter
+})
 
   // إضافة عمل جديد
   const handleAddWork = (work) => {
@@ -37,7 +42,15 @@ function WorksPage({ client, clients, setClients }) {
       )
     )
   }
-
+const handleToggle = (workId, field) => {
+  setClients(prev =>
+    prev.map(c =>
+      c.id === client.id
+        ? { ...c, works: c.works.map(w => w.id === workId ? { ...w, [field]: !w[field] } : w) }
+        : c
+    )
+  )
+}
   return (
     <div className="works-page">
       {/* رأس الصفحة */}
@@ -92,6 +105,7 @@ function WorksPage({ client, clients, setClients }) {
               key={work.id}
               work={work}
               onDelete={handleDeleteWork}
+              onToggle={handleToggle}
             />
           ))
         ) : (

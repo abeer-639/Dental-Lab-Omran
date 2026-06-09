@@ -3,8 +3,14 @@ import './FilterBar.css'
 
 // filter: 'all' أو أي قيمة من WORK_TYPES
 function FilterBar({ filter, setFilter }) {
-  const tabs = [{ value: 'all', label: 'الكل' }, ...WORK_TYPES]
-
+ const tabs = [
+  { value: 'all', label: 'الكل' },
+  ...WORK_TYPES,
+  { value: 'paid', label: 'مدفوع' },
+  { value: 'unpaid', label: 'غير مدفوع' },
+  { value: 'delivered', label: 'مستلم' },
+  { value: 'undelivered', label: 'غير مستلم' },
+]
   return (
     <div className="filter-bar">
       {tabs.map(tab => (
