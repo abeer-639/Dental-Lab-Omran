@@ -15,7 +15,7 @@ function WorksPage({ client, clients, setClients }) {
 const displayedWorks = client.works.filter(w => {
   if (filter === 'all') return true
   if (filter === 'paid') return w.paid
-  if (filter === 'unpaid') return !w.paid
+  if (filter === 'unpaid') return !w.paid && w.delivered
   if (filter === 'delivered') return w.delivered
   if (filter === 'undelivered') return !w.delivered
   return w.type === filter
