@@ -54,3 +54,21 @@
   opacity: 0.5;
   text-decoration: line-through;
 }
+@media (max-width: 600px) {
+  .work-row {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .work-desc {
+    flex: 1 1 100%;
+    font-size: 13px;
+  }
+
+  .work-cost {
+    flex: 1;
+    min-width: unset;
+    font-size: 13px;
+  }
+}

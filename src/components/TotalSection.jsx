@@ -4,6 +4,8 @@ import './TotalSection.css'
 function TotalSection({ works, filter }) {
   // إجمالي كل الأعمال
   const grandTotal = works.reduce((sum, w) => sum + Number(w.cost), 0)
+  const paidTotal = works.filter(w => w.paid).reduce((sum, w) => sum + Number(w.cost), 0)
+  const remainingTotal = grandTotal - paidTotal
 
   // إجمالي الفئة المختارة
   const filtered = filter === 'all'
@@ -49,6 +51,18 @@ function TotalSection({ works, filter }) {
             <span>الإجمالي الكلي</span>
             <span className="total-grand-amount">{formatCurrency(grandTotal)}</span>
           </div>
+          {paidTotal > 0 && (
+            <div className="total-grand" style={{ color: 'green', fontSize: '13px', opacity: 0.85 }}>
+              <span>المدفوع</span>
+              <span>- {formatCurrency(paidTotal)}</span>
+            </div>
+          )}
+          {paidTotal > 0 && (
+            <div className="total-grand" style={{ fontWeight: 700 }}>
+              <span>المتبقي</span>
+              <span className="total-grand-amount">{formatCurrency(remainingTotal)}</span>
+            </div>
+          )}
         </>
       ) : (
         /* ===== عند فئة محددة ===== */

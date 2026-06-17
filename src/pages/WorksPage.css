@@ -155,4 +155,10 @@
   body {
     background: #fff !important;
   }
+
+}
+  @media (max-width: 600px) {
+  .works-page {
+    padding: 16px 10px;
+  }
 }

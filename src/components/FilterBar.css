@@ -32,3 +32,17 @@
   color: #fff;
   box-shadow: 0 2px 8px rgba(58, 175, 207, 0.35);
 }
+@media (max-width: 600px) {
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    flex: 1 1 calc(33% - 6px);
+    font-size: 12px;
+    padding: 7px 6px;
+  }
+  .work-row{
+    padding: auto;
+  }
+}
