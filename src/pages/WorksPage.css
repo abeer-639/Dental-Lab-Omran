@@ -161,4 +161,9 @@
   .works-page {
     padding: 16px 10px;
   }
+  .print-btn{
+    padding: 4px 4px;
+    
+    margin-right: -7px;
+  }
 }

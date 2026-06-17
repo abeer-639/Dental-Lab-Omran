@@ -66,7 +66,7 @@ const handleToggle = (workId, field) => {
         </Button>
       </div>
           {/* ترويسة الطباعة */}
-<div className="print-header">
+        <div className="print-header">
 
   <div className="print-header-info">
     <span className="print-lab-name">DT. Omran Ali</span>
@@ -85,7 +85,7 @@ const handleToggle = (workId, field) => {
   <button className="print-btn" onClick={() => window.print()}>
     🖨️ طباعة
   </button>
-</div>
+        </div>
       {/* فورم الإضافة */}
       {showForm && (
         <AddWorkForm
