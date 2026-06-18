@@ -11,6 +11,7 @@ function WorkRow({ work, onDelete, onToggle }) {
       <Badge type={work.type} />
       <span className="work-desc">{work.desc}</span>
       <span className="work-cost">{formatCurrency(work.cost)}</span>
+      {work.createdAt && <span className="work-date">{work.createdAt}</span>}
       <label htmlFor="go">التسليم</label>
       <input type="checkbox" checked={work.delivered} id='go' onChange={() => onToggle(work.id, 'delivered')} title="تم التسليم" />
       <label htmlFor="goo">الدفع</label>
