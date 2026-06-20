@@ -37,7 +37,6 @@
   border-color: var(--primary);
 }
 
-/* form-input مُعرَّف في ClientsPage.css لكن نعيده هنا */
 .add-work-form .form-input {
   padding: 10px 14px;
   border: 1.5px solid var(--border);
@@ -64,4 +63,13 @@
 .add-form-actions {
   display: flex;
   gap: 8px;
+}
+
+@media (max-width: 600px){
+  .work-row{
+    .work-date{
+    font-size: 15px;
+    font-weight: 600;
+    }
+  }
 }

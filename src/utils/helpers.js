@@ -6,7 +6,7 @@ export const WORK_TYPES = [
   { value: 'flex',       label: 'مؤقت'   },
 ]
 
-// أنماط الألوان لكل نوع (مستخرجة من لون الشعار الأزرق)
+// أنماط الألوان لكل نوع (مستخرجة من لون الشعار )
 export const TYPE_STYLES = {
   vacuum:      { bg: '#e8f4f8', color: '#1a7fa0', border: '#a8d4e6' },
   flexible:    { bg: '#e6f3f0', color: '#1a8c70', border: '#9fd4c6' },

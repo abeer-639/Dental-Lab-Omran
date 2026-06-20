@@ -118,7 +118,7 @@ function ClientsPage({ clients, setClients, onSelectClient }) {
         >
           <div className="client-form">
             <div className="form-group">
-              <label className="form-label">الاسم *</label>
+              <label className="form-label">الاسم</label>
               <input
                 className="form-input"
                 type="text"
