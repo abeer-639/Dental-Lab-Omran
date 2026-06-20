@@ -21,7 +21,7 @@ function AddWorkForm({ onAdd, onCancel }) {
       cost: Number(form.cost),
       delivered: form.delivered,
       paid: form.paid,
-      createdAt: new Date().toLocaleString('ar-EG'), 
+      createdAt: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
     })
     // إعادة ضبط النموذج
     setForm({ type: 'vacuum', desc: '', cost: '', delivered: false, paid: false })
