@@ -21,7 +21,7 @@ function AddWorkForm({ onAdd, onCancel }) {
       cost: Number(form.cost),
       delivered: form.delivered,
       paid: form.paid,
-      createdAt: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+      createdAt: new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),createdAt: (() => { const d = new Date(); return `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`; })(),
     })
     // إعادة ضبط النموذج
     setForm({ type: 'vacuum', desc: '', cost: '', delivered: false, paid: false })
